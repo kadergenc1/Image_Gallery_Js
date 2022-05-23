@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    
+    
+</head>
+<body>
+
+    <div class="row">
+      <div class="column">
+        <div class="img-gallery">
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href="https://source.unsplash.com/random/200*200=1"></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href="https://source.unsplash.com/random/200*200=2"></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href="https://source.unsplash.com/random/200*200=3"></a></div>
+            </div>
+          </div>
+          
+         <!-- <img src="images/1.jpg" onclick="openFullImg(this.src)">
+          <img src="images/2.jpg" onclick="openFullImg(this.src)">
+          <img src="images/3.jpg" onclick="openFullImg(this.src)">-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="img-gallery">
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <!-- <img src="images/4.jpg" onclick="openFullImg(this.src)">
+          <img src="images/5.jpg" onclick="openFullImg(this.src)">
+          <img src="images/6.jpg" onclick="openFullImg(this.src)"> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="img-gallery">
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <div class="one-fourth last">
+  
+            <div class="thumbnail-link">
+              <div id="randomImage"><a href=""></a></div>
+            </div>
+          </div>
+          <!--<img src="images/7.jpg" onclick="openFullImg(this.src)">
+          <img src="images/8.jpg" onclick="openFullImg(this.src)">
+          <img src="images/9.jpg" onclick="openFullImg(this.src)">-->
+      </div>
+    </div>
+    
+   
+        
+    </div>
+
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox")
+        var fullImg = document.getElementById("fullImg");
+
+        function openFullImg(pic){
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic;
+        }
+        function closeFullImg(){
+            fullImgBox.style.display = "none";
+        }
+    </script>
+    
+
+<script>
+ var randomImage = {
+    
+    paths: [
+      "https://source.unsplash.com/random/"
+      
+    ],
+    
+    generate: function(){
+      const tags = document.querySelectorAll('a');
+
+      for (let i = 0; i < tags.length; i++)
+      {
+        var path = randomImage.paths[0] + "="+Math.floor(Math.random()*100).toString();
+        var img = new Image();
+        img.src = path;
+        $(tags[i]).html(img);
+        $(tags[i]).attr("href", path);
+      }
+
+    }
+  }
+  
+  randomImage.generate();
+ 
+  
+</script>
+
+</body>
+
+</html>
